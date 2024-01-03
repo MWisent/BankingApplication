@@ -1,14 +1,17 @@
 package com.banking;
 
+import com.banking.enums.TransactionType;
+
 import java.time.LocalDate;
 
 public class Transaction {
     private LocalDate date;
     private double amount;
-    private String type;
+    private TransactionType type;
 
 
-    public Transaction(LocalDate date, double amount, String type) {
+
+    public Transaction(LocalDate date, double amount, TransactionType type) {
         this.date = date;
         this.amount = amount;
         this.type = type;
@@ -30,15 +33,15 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String getType() {
+    public TransactionType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TransactionType type) {
         this.type = type;
     }
 
-    public boolean isType(String type) {
+    public boolean isType(TransactionType type) {
         return this.type.equals(type);
     }
     public boolean isAfter(LocalDate date) {

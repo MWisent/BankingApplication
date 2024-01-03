@@ -3,6 +3,7 @@ package com.banking;
 import com.banking.Interfaces.BankingOperations;
 import com.banking.enums.AccountStatus;
 import com.banking.enums.AccountType;
+import com.banking.enums.TransactionType;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -94,7 +95,7 @@ public class Account implements BankingOperations {
         }
         this.balance += amount;
         // Dodanie trazakcji
-        Transaction transaction = new Transaction(LocalDate.now(), amount, "Deposit");
+        Transaction transaction = new Transaction(LocalDate.now(), amount, TransactionType.DEPOSIT);
         this.transactionHistory.add(transaction);
         return true;
     }
@@ -106,7 +107,7 @@ public class Account implements BankingOperations {
         }
         this.balance -= amount;
 
-        Transaction transaction = new Transaction(LocalDate.now(), amount, "Withdraw");
+        Transaction transaction = new Transaction(LocalDate.now(), amount, TransactionType.WITHDRAW);
         this.transactionHistory.add(transaction);
         return true;
     }
@@ -122,10 +123,10 @@ public class Account implements BankingOperations {
                 targetAccount.setBalance(targetAccount.getBalance() + amount);
 
                 // Dodajemy tranzakcję do bieżącego konta
-                Transaction outgoingTransaction = new Transaction(LocalDate.now(), amount, "Transfer Out");
+                Transaction outgoingTransaction = new Transaction(LocalDate.now(), amount, TransactionType.TRANSFER_OUT);
                 this.transactionHistory.add(outgoingTransaction);
                 // Dodajemy tranzakcję do docelowego konta
-                Transaction incomingTransaction = new Transaction(LocalDate.now(), amount, "Transfer In");
+                Transaction incomingTransaction = new Transaction(LocalDate.now(), amount, TransactionType.TRANSFER_IN);
                 this.transactionHistory.add(incomingTransaction);
 
 

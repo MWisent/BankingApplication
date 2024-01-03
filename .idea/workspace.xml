@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f62d57a4-d73b-4361-abec-d5f05a39b847" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/com/banking/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/Interfaces/BankingOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/enums/AccountStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/enums/AccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/banking/enums/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/banking/SavingsAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,23 +30,38 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2aHJ92HY2nRnD8bZ2Tmv2tqhndi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ClassesInterfaces&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/marcin/Pulpit/Java/Projects/Banking-Application"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="BankingApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="BankingApplication" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
