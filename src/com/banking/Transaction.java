@@ -1,5 +1,6 @@
 package com.banking;
 
+import com.banking.enums.Currency;
 import com.banking.enums.TransactionType;
 
 import java.time.LocalDate;
@@ -7,13 +8,16 @@ import java.time.LocalDate;
 public class Transaction {
     private LocalDate date;
     private double amount;
+
+    private Currency currency;
     private TransactionType type;
 
 
 
-    public Transaction(LocalDate date, double amount, TransactionType type) {
+    public Transaction(LocalDate date, double amount, Currency currency, TransactionType type) {
         this.date = date;
         this.amount = amount;
+        this.currency = currency;
         this.type = type;
     }
 
@@ -53,7 +57,8 @@ public class Transaction {
         return "Transaction{" +
                 "date=" + date +
                 ", amount=" + amount +
-                ", type='" + type + '\'' +
+                ", currency=" + currency +
+                ", type=" + type +
                 '}';
     }
 }

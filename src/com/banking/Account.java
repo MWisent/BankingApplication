@@ -4,6 +4,7 @@ import com.banking.Interfaces.BankingOperations;
 import com.banking.enums.AccountStatus;
 import com.banking.enums.AccountType;
 import com.banking.enums.TransactionType;
+import com.banking.enums.Currency;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,18 +16,20 @@ public class Account implements BankingOperations {
     private Customer accountHolder;
     private AccountStatus status;
     private AccountType accountType;
+    private Currency currency;
     private LocalDate  dateOfOpening;
     private List<Transaction> transactionHistory;
 
     public Account(String accountNumber, double balance,
                    Customer accountHolder, AccountStatus status,
-                   AccountType accountType, LocalDate dateOfOpening,
+                   AccountType accountType, Currency currency,  LocalDate dateOfOpening,
                    List<Transaction> transactionHistory) {
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.accountHolder = accountHolder;
         this.status = status;
         this.accountType = accountType;
+        this.currency = currency;
         this.dateOfOpening = dateOfOpening;
         this.transactionHistory = transactionHistory;
     }
@@ -66,11 +69,17 @@ public class Account implements BankingOperations {
     public AccountType getAccountType() {
         return accountType;
     }
-
+    
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
 
+    public Currency getCurrency() {
+        return currency;
+    }
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
+    }
     public LocalDate getDateOfOpening() {
         return dateOfOpening;
     }
@@ -88,14 +97,14 @@ public class Account implements BankingOperations {
     }
 
     @Override
-    public boolean deposit(double amount) {
+    public boolean deposit(double amount, Currency currency) {
         if (amount <= 0) {
             System.out.println("Kwota wpłaty musi być dodatnia");
             return false;
         }
         this.balance += amount;
         // Dodanie trazakcji
-        Transaction transaction = new Transaction(LocalDate.now(), amount, TransactionType.DEPOSIT);
+        Transaction transaction = new Transaction(LocalDate.now(), amount, Currency.PLN, TransactionType.DEPOSIT);
         this.transactionHistory.add(transaction);
         return true;
     }
@@ -107,7 +116,7 @@ public class Account implements BankingOperations {
         }
         this.balance -= amount;
 
-        Transaction transaction = new Transaction(LocalDate.now(), amount, TransactionType.WITHDRAW);
+        Transaction transaction = new Transaction(LocalDate.now(), amount, Currency.PLN, TransactionType.WITHDRAW);
         this.transactionHistory.add(transaction);
         return true;
     }
@@ -123,10 +132,10 @@ public class Account implements BankingOperations {
                 targetAccount.setBalance(targetAccount.getBalance() + amount);
 
                 // Dodajemy tranzakcję do bieżącego konta
-                Transaction outgoingTransaction = new Transaction(LocalDate.now(), amount, TransactionType.TRANSFER_OUT);
+                Transaction outgoingTransaction = new Transaction(LocalDate.now(), amount, Currency.PLN, TransactionType.TRANSFER_OUT);
                 this.transactionHistory.add(outgoingTransaction);
                 // Dodajemy tranzakcję do docelowego konta
-                Transaction incomingTransaction = new Transaction(LocalDate.now(), amount, TransactionType.TRANSFER_IN);
+                Transaction incomingTransaction = new Transaction(LocalDate.now(), amount, Currency.PLN, TransactionType.TRANSFER_IN);
                 this.transactionHistory.add(incomingTransaction);
 
 

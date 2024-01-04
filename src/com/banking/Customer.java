@@ -15,6 +15,26 @@ public class Customer {
         this.accountList = accountList;
     }
 
+    public void addAccount(Account account) {
+        if (account != null && !accountList.contains(account)) {
+            accountList.add(account);
+        }
+    }
+
+    public void removeAccount(Account account) {
+        if (account != null && accountList.contains(account)) {
+            accountList.remove(account);
+        }
+    }
+    public Account findAccount(String accountNumber) {
+        for (Account account: accountList) {
+            if (account.getAccountNumber() == accountNumber) {
+                return account;
+            }
+        }
+        return null;
+    }
+
     public String getSurname() {
         return surname;
     }
